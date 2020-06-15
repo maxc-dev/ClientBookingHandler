@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.MainController">
-    <Button layoutX="259.0" layoutY="200.0" mnemonicParsing="false" text="Test"/>
+<AnchorPane id="root" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style/pane.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.MainController">
+    <Pane id="banner" fx:id="banner" prefHeight="171.0" prefWidth="1200.0" stylesheets="@style/pane.css">
+        <Label id="main-title" layoutX="14.0" layoutY="70.0" prefHeight="87.0" prefWidth="400.0" stylesheets="@style/text.css" text="Dashboard">
+            <font>
+                <Font size="71.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane id="menu-button" fx:id="bannerButton1" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+        <Label id="main-menu-button" layoutX="75.0" layoutY="-4.0" prefHeight="69.0" prefWidth="325.0" stylesheets="@style/text.css" text="Manage Clients" textAlignment="CENTER">
+            <font>
+                <Font size="35.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane id="menu-button" fx:id="bannerButton2" layoutX="400.0" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+        <Label id="main-menu-button" layoutX="51.0" layoutY="-4.0" prefHeight="69.0" prefWidth="349.0" stylesheets="@style/text.css" text="Manage Bookings" textAlignment="CENTER">
+            <font>
+                <Font size="35.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane id="menu-button" fx:id="bannerButton3" layoutX="800.0" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+        <Label id="main-menu-button" layoutX="51.0" layoutY="-4.0" prefHeight="69.0" prefWidth="349.0" stylesheets="@style/text.css" text="Manage Invoices" textAlignment="CENTER">
+            <font>
+                <Font size="35.0" />
+            </font>
+        </Label>
+    </Pane>
 </AnchorPane>

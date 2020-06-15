@@ -1,0 +1,11 @@
+#root {
+    -fx-background-color: white;
+}
+
+#banner {
+    -fx-background-color: linear-gradient(to bottom, #68e52f, #50b124);
+}
+
+#menu-button {
+    -fx-background-color: #50b124;
+}

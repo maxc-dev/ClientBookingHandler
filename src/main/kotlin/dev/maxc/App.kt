@@ -11,9 +11,13 @@ import javafx.stage.Stage
  * @since 06/06/2020
  */
 class App : Application() {
-    override fun start(stage: Stage?) {
-        stage?.scene = Scene(FXMLLoader.load(javaClass.getResource("/root.fxml")))
-        stage?.show()
+    override fun start(stage: Stage) {
+        val root = Scene(FXMLLoader.load(javaClass.getResource("/root.fxml")))
+        root.stylesheets?.add(javaClass.getResource("/style/fontstyle.css").toExternalForm())
+        stage.scene = root
+        stage.isResizable = false
+
+        stage.show()
     }
 
     companion object {
