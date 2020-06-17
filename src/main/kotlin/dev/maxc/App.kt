@@ -16,6 +16,7 @@ class App : Application() {
         root.stylesheets?.add(javaClass.getResource("/style/fontstyle.css").toExternalForm())
         stage.scene = root
         stage.isResizable = false
+        stage.title = "Dashboard | St Marks Church Booking Manager"
 
         stage.show()
     }

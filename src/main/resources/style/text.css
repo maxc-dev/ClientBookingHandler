@@ -1,8 +1,25 @@
-#main-title {
-    -fx-font-family: "Roboto Thin";
-    -fx-text-fill: #ffffff;
+#bannerTitle {
+    -fx-font-family: "Roboto Regular";
+    -fx-text-fill: #f6f6f6;
+    -fx-text-alignment: center;
+    -fx-font-size: 21px;
 }
 
-#main-menu-button {
+#sideBarTitle {
+    -fx-font-family: "Roboto Regular";
     -fx-text-fill: #ffffff;
+    -fx-font-size: 21px;
+    -fx-padding: 2px 0 2px 10px;
+}
+
+#sideBarUser {
+    -fx-font-family: "Roboto Regular";
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+}
+
+#sideBarEmail {
+    -fx-font-family: "Roboto Regular";
+    -fx-text-fill: #f5f5f5;
+    -fx-font-size: 16px;
 }

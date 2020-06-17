@@ -2,45 +2,67 @@
 
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <AnchorPane id="root" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style/pane.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.MainController">
-    <Pane id="banner" fx:id="banner" prefHeight="171.0" prefWidth="1200.0" stylesheets="@style/pane.css">
-        <Label id="main-title" layoutX="14.0" layoutY="70.0" prefHeight="87.0" prefWidth="400.0" stylesheets="@style/text.css" text="Dashboard">
-            <font>
-                <Font size="71.0" />
-            </font>
-        </Label>
+    <Pane id="side-bar" prefHeight="700.0" prefWidth="311.0" stylesheets="@style/pane.css">
+        <Pane id="sideBarVBox" layoutX="14.0" layoutY="14.0" prefHeight="125.0" prefWidth="282.0">
+            <ImageView fx:id="userPicDisplay" fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@icons/default_pic.png" />
+            </ImageView>
+            <Label fx:id="userNameDisplay" id="sideBarUser" layoutX="14.0" layoutY="57.0" prefHeight="35.0" prefWidth="199.0" stylesheets="@style/text.css" text="User Name">
+            </Label>
+            <Label fx:id="userEmailDisplay" id="sideBarEmail" layoutX="14.0" layoutY="90.0" prefHeight="28.0" prefWidth="224.0" stylesheets="@style/text.css" text="email@example.com" />
+            <Pane fx:id="logoutButton" id="imagePane" layoutX="238.0" layoutY="87.0" prefHeight="35.0" prefWidth="36.0"
+                  stylesheets="@style/image.css">
+                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <Image url="@icons/logout.png"/>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+            </Pane>
+        </Pane>
+        <Pane id="sideBarVBox" layoutX="14.0" layoutY="154.0" prefHeight="163.0" prefWidth="282.0">
+            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0" stylesheets="@style/pane.css">
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/arrow_down.png" />
+                </ImageView>
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/person.png" />
+                </ImageView>
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Clients">
+                </Label>
+            </HBox>
+            <HBox fx:id="addClientButton" id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/arrow_right.png" />
+                </ImageView>
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/add_person.png" />
+                </ImageView>
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Add Client">
+                </Label>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </HBox>
+            <HBox fx:id="editClientButton" id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/arrow_right.png" />
+                </ImageView>
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@icons/edit.png" />
+                </ImageView>
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Edit Client">
+                </Label>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </HBox>
+        </Pane>
     </Pane>
-    <Pane id="menu-button" fx:id="bannerButton1" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
-        <cursor>
-            <Cursor fx:constant="HAND" />
-        </cursor>
-        <Label id="main-menu-button" layoutX="75.0" layoutY="-4.0" prefHeight="69.0" prefWidth="325.0" stylesheets="@style/text.css" text="Manage Clients" textAlignment="CENTER">
-            <font>
-                <Font size="35.0" />
-            </font>
-        </Label>
-    </Pane>
-    <Pane id="menu-button" fx:id="bannerButton2" layoutX="400.0" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
-        <cursor>
-            <Cursor fx:constant="HAND" />
-        </cursor>
-        <Label id="main-menu-button" layoutX="51.0" layoutY="-4.0" prefHeight="69.0" prefWidth="349.0" stylesheets="@style/text.css" text="Manage Bookings" textAlignment="CENTER">
-            <font>
-                <Font size="35.0" />
-            </font>
-        </Label>
-    </Pane>
-    <Pane id="menu-button" fx:id="bannerButton3" layoutX="800.0" layoutY="166.0" prefHeight="60.0" prefWidth="400.0" stylesheets="@style/pane.css">
-        <cursor>
-            <Cursor fx:constant="HAND" />
-        </cursor>
-        <Label id="main-menu-button" layoutX="51.0" layoutY="-4.0" prefHeight="69.0" prefWidth="349.0" stylesheets="@style/text.css" text="Manage Invoices" textAlignment="CENTER">
-            <font>
-                <Font size="35.0" />
-            </font>
-        </Label>
-    </Pane>
+    <Pane id="content-pane" fx:id="contentPane" layoutX="309.0" prefHeight="700.0" prefWidth="917.0" stylesheets="@style/pane.css" />
 </AnchorPane>
