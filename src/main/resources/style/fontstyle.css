@@ -4,6 +4,16 @@
 }
 
 @font-face {
-    font-family: 'Roboto Regular';
+    font-family: 'Roboto';
     src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed Bold';
+    src: url('../fonts/RobotoCondensed-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
 }
