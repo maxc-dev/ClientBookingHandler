@@ -1,6 +1,8 @@
 package dev.maxc.ui
 
+import dev.maxc.App
 import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
 import javafx.scene.image.ImageView
@@ -34,8 +36,15 @@ class MainController : Initializable {
     lateinit var editClientButton: HBox
 
     @FXML
+    lateinit var addBookingButton: HBox
+
+    @FXML
+    lateinit var editBookingButton: HBox
+
+    @FXML
     lateinit var contentPane: Pane
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        //contentPane.children.add(FXMLLoader.load(App::class.java.getResource("/calendar_node.fxml")))
     }
 }
