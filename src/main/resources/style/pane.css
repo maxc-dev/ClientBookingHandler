@@ -11,14 +11,18 @@
     -fx-background-color: #68e21a;
 }
 
-#content-pane {
+#backContentPane {
     -fx-background-color: #ececec;
     -fx-effect: dropshadow(gaussian, darkgrey, 12, 0, 0, 0);
 }
 
-#sideBarVBox {
+#contentPane {
+    -fx-background-color: #ffffff;
+}
+
+#sideBarCategoryPane {
     -fx-background-color: #61d219;
-    -fx-effect: dropshadow(gaussian, grey, 6, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, #343434, 7, 0, 0, 0);
 }
 
 #sideBarButtonContainer {
@@ -28,4 +32,16 @@
 
 #sideBarButtonContainer:hover {
     -fx-background-color: #5bc915;
+}
+
+#calendarPaneNode {
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, grey, 6, 0, 0, 0);
+    -fx-padding: 10 10 10 10;
+    -fx-border-radius: 3 3 3 3;
+    -fx-background-radius: 3 3 3 3;
+}
+
+#calendarPaneNode:hover {
+    -fx-background-color: #e8e8e8;
 }

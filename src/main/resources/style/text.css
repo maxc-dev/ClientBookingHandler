@@ -1,25 +1,36 @@
-#bannerTitle {
-    -fx-font-family: "Roboto Regular";
-    -fx-text-fill: #f6f6f6;
-    -fx-text-alignment: center;
-    -fx-font-size: 21px;
-}
-
 #sideBarTitle {
-    -fx-font-family: "Roboto Regular";
+    -fx-font-family: "Roboto";
     -fx-text-fill: #ffffff;
     -fx-font-size: 21px;
     -fx-padding: 2px 0 2px 10px;
 }
 
 #sideBarUser {
-    -fx-font-family: "Roboto Regular";
+    -fx-font-family: "Roboto";
     -fx-text-fill: #ffffff;
     -fx-font-size: 24px;
 }
 
 #sideBarEmail {
-    -fx-font-family: "Roboto Regular";
-    -fx-text-fill: #f5f5f5;
+    -fx-font-family: "Roboto Condensed";
+    -fx-text-fill: #fcfcfc;
     -fx-font-size: 16px;
+}
+
+#calendarNode-BookingCount {
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #61d219;
+    -fx-font-size: 48px;
+}
+
+#calendarNode-BookingDay {
+    -fx-font-family: "Roboto Condensed Bold";
+    -fx-text-fill: #424242;
+    -fx-font-size: 16px;
+}
+
+#calendarNode-BookingDate {
+    -fx-font-family: "Roboto Condensed Bold";
+    -fx-text-fill: #424242;
+    -fx-font-size: 24px;
 }
