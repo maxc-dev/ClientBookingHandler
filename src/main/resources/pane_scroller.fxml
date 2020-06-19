@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<Pane id="contentPane" prefHeight="700.0" prefWidth="900.0" stylesheets="@style/pane.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.scroller.progressbar.PaneScrollerController">
+    <HBox fx:id="barDisplay" alignment="CENTER" prefHeight="100.0" prefWidth="900.0" />
+</Pane>
