@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox
  * @author Max Carter
  * @since 19/06/2020
  */
-class ProgressBarNode(title: String = "") : Pane() {
+class ProgressBarNode(title: String = "", private val separator: ProgressBarTickSeparator) : Pane() {
     private var titleDisplayLabel = Label(title)
     private var statusDisplayImage = ImageView(Image(App::class.java.getResource("/icons/unchecked.png").file))
 
@@ -26,6 +26,7 @@ class ProgressBarNode(title: String = "") : Pane() {
             field = value
             statusDisplayImage.image =
                 Image(App::class.java.getResource("/icons/${if (value) "" else "un"}checked.png").file)
+            separator.updateStatus(value)
         }
 
     init {
