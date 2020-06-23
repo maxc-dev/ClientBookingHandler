@@ -1,11 +1,11 @@
 package dev.maxc.ui
 
-import dev.maxc.App
+import dev.maxc.ui.view.client.ClientCreationView
 import javafx.fxml.FXML
-import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
 import javafx.scene.image.ImageView
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import java.net.URL
@@ -27,24 +27,23 @@ class MainController : Initializable {
     lateinit var userEmailDisplay: Label
 
     @FXML
-    lateinit var logoutButton: Pane
-
-    @FXML
-    lateinit var addClientButton: HBox
-
-    @FXML
-    lateinit var editClientButton: HBox
-
-    @FXML
-    lateinit var addBookingButton: HBox
-
-    @FXML
-    lateinit var editBookingButton: HBox
-
-    @FXML
     lateinit var contentPane: Pane
+
+    lateinit var clientCreationView: ClientCreationView
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         //contentPane.children.add(FXMLLoader.load(App::class.java.getResource("/calendar_node.fxml")))
+    }
+
+    @FXML
+    fun onUserLogout() {
+        //todo(send user to sign in)
+    }
+
+    @FXML
+    fun onClientCreateRequest() {
+        if (!this::clientCreationView.isInitialized) {
+            clientCreationView = ClientCreationView(contentPane)
+        }
     }
 }
