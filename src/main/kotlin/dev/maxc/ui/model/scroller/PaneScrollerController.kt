@@ -1,8 +1,10 @@
-package dev.maxc.ui.scroller
+package dev.maxc.ui.model.scroller
 
-import dev.maxc.ui.scroller.progressbar.ProgressBar
+import dev.maxc.ui.model.progressbar.ProgressBar
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.geometry.Pos
+import javafx.scene.Group
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import java.net.URL
@@ -15,9 +17,12 @@ import java.util.*
  */
 class PaneScrollerController : Initializable {
     @FXML
-    lateinit var basePane: HBox
+    lateinit var basePane: VBox
 
     lateinit var progressBar: ProgressBar
+    lateinit var scrollPanes: List<Scrollable>
+    var applicationPane = Group()
+    var scrollIndex = 0
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
     }
@@ -25,23 +30,32 @@ class PaneScrollerController : Initializable {
     /**
      * Sets the panes that will be scrolled through
      */
-    fun setPanes(vararg panes: ScrollablePane) {
+    fun setPanes(vararg panes: Scrollable) {
         if (panes.isEmpty()) {
             //if there are no panes to display there is no point in continuing
             return
         }
-
+        scrollPanes = panes.map { p -> p }
         progressBar = ProgressBar(panes.map { pane -> pane.title })
         basePane.children.add(progressBar)
 
         //adds the scroll pane & arrows after the progress bar has been added
-        val scrollerComponents = VBox()
+        val scrollerComponents = HBox(10.0)
+        scrollerComponents.alignment = Pos.CENTER
         scrollerComponents.children.add(ScrollArrow(this, false))
-        for (pane in panes) {
-            scrollerComponents.children.add(pane)
-        }
+        scrollerComponents.children.add(applicationPane)
+        setPaneIndex(0)
         scrollerComponents.children.add(ScrollArrow(this, true))
         basePane.children.add(scrollerComponents)
+    }
+
+    /**
+     * Sets the index of the featured pane
+     */
+    private fun setPaneIndex(index: Int) {
+        applicationPane.children.remove(scrollPanes[scrollIndex])
+        scrollIndex = index
+        applicationPane.children.add(scrollPanes[index])
     }
 
     /**
@@ -49,10 +63,15 @@ class PaneScrollerController : Initializable {
      */
     fun onFeaturedPaneScrolled(right: Boolean) {
         if (right) {
-            progressBar.tick()
+            if (scrollIndex + 1 < scrollPanes.size) {
+                setPaneIndex(++scrollIndex)
+                progressBar.tick()
+            }
         } else {
-            progressBar.untick()
+            if (scrollIndex - 1 >= 0) {
+                setPaneIndex(--scrollIndex)
+                progressBar.untick()
+            }
         }
-
     }
 }
