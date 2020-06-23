@@ -1,4 +1,4 @@
-package dev.maxc.ui
+package dev.maxc.ui.view.calendar
 
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
