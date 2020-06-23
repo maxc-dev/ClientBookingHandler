@@ -14,7 +14,7 @@
             <Label id="sideBarUser" fx:id="userNameDisplay" layoutX="14.0" layoutY="57.0" prefHeight="35.0" prefWidth="199.0" stylesheets="@style/text.css" text="User Name">
             </Label>
             <Label id="sideBarEmail" fx:id="userEmailDisplay" layoutX="14.0" layoutY="90.0" prefHeight="28.0" prefWidth="224.0" stylesheets="@style/text.css" text="email@example.com" />
-            <Pane id="imagePane" fx:id="logoutButton" layoutX="238.0" layoutY="87.0" prefHeight="35.0" prefWidth="36.0" stylesheets="@style/image.css">
+            <Pane id="imagePane" layoutX="238.0" layoutY="87.0" prefHeight="35.0" prefWidth="36.0" stylesheets="@style/image.css" onMouseReleased="#onUserLogout">
                 <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@icons/logout.png" />
                     <cursor>
@@ -49,7 +49,7 @@
                 <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Clients">
                 </Label>
             </HBox>
-            <HBox id="sideBarButtonContainer" fx:id="addClientButton" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" onMouseReleased="#onClientCreateRequest" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@icons/arrow_right.png" />
                 </ImageView>
@@ -62,7 +62,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </HBox>
-            <HBox id="sideBarButtonContainer" fx:id="editClientButton" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@icons/arrow_right.png" />
                 </ImageView>
@@ -87,7 +87,7 @@
                 <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Bookings">
                 </Label>
             </HBox>
-            <HBox id="sideBarButtonContainer" fx:id="addBookingButton" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@icons/arrow_right.png" />
                 </ImageView>
@@ -100,7 +100,7 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </HBox>
-            <HBox id="sideBarButtonContainer" fx:id="editBookingButton" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@icons/arrow_right.png" />
                 </ImageView>

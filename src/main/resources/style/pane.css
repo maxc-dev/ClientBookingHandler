@@ -12,16 +12,19 @@
 }
 
 #backContentPane {
-    -fx-background-color: #ececec;
+    -fx-background-color: #fdfdfd;
     -fx-effect: dropshadow(gaussian, darkgrey, 12, 0, 0, 0);
 }
 
 #contentPane {
+    -fx-background-color: #fdfdfd;
     -fx-background-color: #ffffff;
 }
 
 #sideBarCategoryPane {
     -fx-background-color: #61d219;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
     -fx-effect: dropshadow(gaussian, #343434, 7, 0, 0, 0);
 }
 
@@ -44,4 +47,12 @@
 
 #calendarPaneNode:hover {
     -fx-background-color: #e8e8e8;
+}
+
+#scrollPane {
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, grey, 6, 0, 0, 0);
+    -fx-padding: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
 }
