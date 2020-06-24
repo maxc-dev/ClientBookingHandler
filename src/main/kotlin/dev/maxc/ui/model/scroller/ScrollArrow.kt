@@ -23,7 +23,7 @@ class ScrollArrow(controller: PaneScrollerController, right: Boolean) :
         mainPane.cursor = Cursor.HAND
         children.add(mainPane)
 
-        val arrowDisplay = ImageView(App::class.java.getResource("/icons/arrow_${if (right) "right" else "down"}.png").toExternalForm())
+        val arrowDisplay = ImageView(App::class.java.getResource("/icons/arrow_${if (right) "right" else "left"}.png").toExternalForm())
         mainPane.children.add(arrowDisplay)
 
         setOnMouseReleased {
