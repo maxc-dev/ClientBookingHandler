@@ -36,7 +36,7 @@ class PaneScrollerController : Initializable {
             return
         }
         scrollPanes = panes.map { p -> p }
-        progressBar = ProgressBar(panes.map { pane -> pane.title })
+        progressBar = ProgressBar(panes.map { pane -> pane })
         basePane.children.add(progressBar)
 
         //adds the scroll pane & arrows after the progress bar has been added
@@ -65,12 +65,11 @@ class PaneScrollerController : Initializable {
         if (right) {
             if (scrollIndex + 1 < scrollPanes.size) {
                 setPaneIndex(++scrollIndex)
-                progressBar.tick()
+                progressBar.tick(scrollIndex-1)
             }
         } else {
             if (scrollIndex - 1 >= 0) {
                 setPaneIndex(--scrollIndex)
-                progressBar.untick()
             }
         }
     }

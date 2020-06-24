@@ -15,7 +15,7 @@ import javafx.scene.text.Font
  * @author Max Carter
  * @since 19/06/2020
  */
-class ProgressBarNode(title: String = "", private val separator: ProgressBarTickSeparator) : Group() {
+class ProgressBarNode(title: String = "") : Group() {
     private val titleDisplayLabel = Label(title)
     private val statusDisplayImage = ImageView(App::class.java.getResource("/icons/unchecked.png").toExternalForm())
 
@@ -28,7 +28,6 @@ class ProgressBarNode(title: String = "", private val separator: ProgressBarTick
             field = value
             statusDisplayImage.image =
                 Image(App::class.java.getResource("/icons/${if (value) "" else "un"}checked.png").toExternalForm())
-            separator.updateStatus(value)
         }
 
     init {

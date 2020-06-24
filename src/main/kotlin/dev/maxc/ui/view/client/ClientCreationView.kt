@@ -26,10 +26,13 @@ class ClientCreationView(parent: Pane) {
         val paneClientNotes = Scrollable("Notes")
         paneClientName.children.add(FXMLLoader.load(App::class.java.getResource("/client_create_name.fxml")))
 
-        val paneClientConfirm = Scrollable("Confirm")
+        val paneClientOverview = Scrollable("Confirm")
         paneClientName.children.add(FXMLLoader.load(App::class.java.getResource("/client_create_name.fxml")))
 
-        paneScrollerController.setPanes(paneClientName, paneClientEmail, paneClientNotes, paneClientConfirm)
+        val paneClientConfirm = Scrollable("Confirm", skipProgressBarTab = true)
+        paneClientName.children.add(FXMLLoader.load(App::class.java.getResource("/client_create_name.fxml")))
+
+        paneScrollerController.setPanes(paneClientName, paneClientEmail, paneClientNotes, paneClientOverview, paneClientConfirm)
         parent.children.add(paneScrollerRoot)
     }
 }

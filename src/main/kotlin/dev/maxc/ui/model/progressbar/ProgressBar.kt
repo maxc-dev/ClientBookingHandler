@@ -1,5 +1,6 @@
 package dev.maxc.ui.model.progressbar
 
+import dev.maxc.ui.model.scroller.Scrollable
 import javafx.geometry.Pos
 import javafx.scene.Group
 import javafx.scene.layout.HBox
@@ -10,10 +11,8 @@ import javafx.scene.layout.StackPane
  * @author Max Carter
  * @since 19/06/2020
  */
-class ProgressBar(startingNodeTitles: List<String> = arrayListOf()) : Group() {
+class ProgressBar(scrollablePanes: List<Scrollable> = arrayListOf()) : Group() {
     private val progressNodes = arrayListOf<ProgressBarNode>()
-    private val progressSeparatorNodes = arrayListOf<ProgressBarTickSeparator>()
-    var index = -1
 
     init {
         //format pane
@@ -32,27 +31,22 @@ class ProgressBar(startingNodeTitles: List<String> = arrayListOf()) : Group() {
         children.add(contentHold)
 
         //loop through the titles, create a pane for each and a line separator
-        for (title in startingNodeTitles) {
+        for (pane in scrollablePanes) {
+            if (pane.skipProgressBarTab) {
+                continue
+            }
             val nodeSeparator = ProgressBarTickSeparator()
-            val node = ProgressBarNode(title, nodeSeparator)
-            progressSeparatorNodes.add(nodeSeparator)
+            val node = ProgressBarNode(pane.title)
             progressNodes.add(node)
             contentHold.children.add(nodeSeparator)
             contentHold.children.add(node)
         }
         //remove the first line separator (makes it symmetrical)
-        contentHold.children.remove(progressSeparatorNodes[0])
+        contentHold.children.removeAt(0)
     }
 
-    fun tick() {
-        if (index < progressNodes.size-1) {
-            progressNodes[++index].checked = true
-        }
-    }
+    fun tick(tickedIndex: Int) {
+        progressNodes[tickedIndex].checked = true
 
-    fun untick() {
-        if (index > -1) {
-            progressNodes[--index].checked = false
-        }
     }
 }
