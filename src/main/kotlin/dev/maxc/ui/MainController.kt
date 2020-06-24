@@ -1,12 +1,10 @@
 package dev.maxc.ui
 
-import dev.maxc.ui.view.client.ClientCreationView
+import dev.maxc.ui.view.client.ClientCreationPaneScroller
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
 import javafx.scene.image.ImageView
-import javafx.scene.input.MouseEvent
-import javafx.scene.layout.HBox
 import javafx.scene.layout.Pane
 import java.net.URL
 import java.util.*
@@ -29,7 +27,7 @@ class MainController : Initializable {
     @FXML
     lateinit var contentPane: Pane
 
-    lateinit var clientCreationView: ClientCreationView
+    lateinit var viewCreator: ClientCreationPaneScroller
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         //contentPane.children.add(FXMLLoader.load(App::class.java.getResource("/calendar_node.fxml")))
@@ -42,8 +40,8 @@ class MainController : Initializable {
 
     @FXML
     fun onClientCreateRequest() {
-        if (!this::clientCreationView.isInitialized) {
-            clientCreationView = ClientCreationView(contentPane)
+        if (!this::viewCreator.isInitialized) {
+            viewCreator = ClientCreationPaneScroller(contentPane)
         }
     }
 }

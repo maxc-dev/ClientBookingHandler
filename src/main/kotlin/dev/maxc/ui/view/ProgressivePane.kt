@@ -6,5 +6,6 @@ package dev.maxc.ui.view
  * @since 24/06/2020
  */
 interface ProgressivePane {
-    fun requestProgression() : Boolean
+    fun onRequestProgression() : Boolean
+    fun onProgressionDenied()
 }

@@ -1,6 +1,7 @@
 package dev.maxc.ui.view.client
 
 import dev.maxc.ui.util.InputValidation
+import dev.maxc.ui.util.TextFieldUtils
 import dev.maxc.ui.view.ProgressivePane
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -30,8 +31,18 @@ class ClientCreationName : Initializable, ProgressivePane {
         addTextFieldValidator(forename, surname, companyName, activityName)
     }
 
-    override fun requestProgression(): Boolean {
+    override fun onRequestProgression(): Boolean {
         return InputValidation.isNotEmpty(forename, surname, companyName, activityName)
+    }
+
+    override fun onProgressionDenied() {
+        for (field in arrayOf(forename, surname, companyName, activityName)) {
+            if (field.text.isBlank()) {
+                TextFieldUtils.flagEmpty(field)
+            } else {
+                TextFieldUtils.unFlag(field)
+            }
+        }
     }
 
     private fun addTextFieldValidator(vararg fields: TextField) {
@@ -39,9 +50,9 @@ class ClientCreationName : Initializable, ProgressivePane {
             field.focusedProperty()
                 .addListener { _, _, inFocus ->
                     if (!inFocus && field.text.isBlank()) {
-                        field.style += "-fx-background-color: red, #5bc915, #5bc915;"
+                        TextFieldUtils.flagEmpty(field)
                     } else {
-                        field.style += "-fx-background-color: white, #5bc915, #5bc915;"
+                        TextFieldUtils.unFlag(field)
                     }
                 }
         }

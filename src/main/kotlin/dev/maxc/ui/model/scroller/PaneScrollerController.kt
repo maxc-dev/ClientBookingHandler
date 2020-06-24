@@ -19,8 +19,8 @@ class PaneScrollerController : Initializable {
     @FXML
     lateinit var basePane: VBox
 
-    lateinit var progressBar: ProgressBar
-    lateinit var scrollPanes: List<Scrollable>
+    private lateinit var progressBar: ProgressBar
+    private lateinit var scrollPanes: List<Scrollable>
     var applicationPane = Group()
     var scrollIndex = 0
 
@@ -63,10 +63,16 @@ class PaneScrollerController : Initializable {
      */
     fun onFeaturedPaneScrolled(right: Boolean) {
         if (right) {
-            if (scrollIndex + 1 < scrollPanes.size) {
-                setPaneIndex(++scrollIndex)
-                progressBar.tick(scrollIndex-1)
+            //is it valid to move onto next?
+            if (scrollPanes[scrollIndex].progressivePane!!.onRequestProgression()) {
+                if (scrollIndex + 1 < scrollPanes.size) {
+                    setPaneIndex(++scrollIndex)
+                    progressBar.tick(scrollIndex-1)
+                }
+            } else {
+                scrollPanes[scrollIndex].progressivePane!!.onProgressionDenied()
             }
+
         } else {
             if (scrollIndex - 1 >= 0) {
                 setPaneIndex(--scrollIndex)
