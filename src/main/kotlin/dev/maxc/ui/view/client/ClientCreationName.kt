@@ -28,7 +28,7 @@ class ClientCreationName : Initializable, ProgressivePane {
     lateinit var activityName: TextField
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        addTextFieldValidator(forename, surname, companyName, activityName)
+        TextFieldUtils.addTextFieldValidator(forename, surname, companyName, activityName)
     }
 
     override fun onRequestProgression(): Boolean {
@@ -42,19 +42,6 @@ class ClientCreationName : Initializable, ProgressivePane {
             } else {
                 TextFieldUtils.unFlag(field)
             }
-        }
-    }
-
-    private fun addTextFieldValidator(vararg fields: TextField) {
-        for (field in fields) {
-            field.focusedProperty()
-                .addListener { _, _, inFocus ->
-                    if (!inFocus && field.text.isBlank()) {
-                        TextFieldUtils.flagEmpty(field)
-                    } else {
-                        TextFieldUtils.unFlag(field)
-                    }
-                }
         }
     }
 }
