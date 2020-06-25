@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane id="scrollPane" prefHeight="540.0" prefWidth="720.0" stylesheets="@../../style/pane.css"
+      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="dev.maxc.ui.view.client.ClientCreationConfirm">
+    <Pane id="sideBarCategoryPane" layoutX="51.0" layoutY="38.0" prefHeight="465.0" prefWidth="618.0"
+          stylesheets="@../../style/pane.css">
+        <Label id="confirmationLabel" fx:id="name" layoutX="62.0" layoutY="15.0" prefHeight="35.0" prefWidth="522.0"
+               stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/person.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="companyName" layoutX="62.0" layoutY="72.0" prefHeight="35.0"
+               prefWidth="522.0" stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="71.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/company.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="activityName" layoutX="62.0" layoutY="127.0" prefHeight="35.0"
+               prefWidth="522.0" stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="126.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/activity.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="email" layoutX="62.0" layoutY="181.0" prefHeight="35.0" prefWidth="522.0"
+               stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="180.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/email.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="phone" layoutX="62.0" layoutY="238.0" prefHeight="35.0" prefWidth="522.0"
+               stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="237.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/phone.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="address" layoutX="62.0" layoutY="293.0" prefHeight="35.0" prefWidth="522.0"
+               stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="16.0" layoutY="292.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/address.png"/>
+        </ImageView>
+        <Label id="confirmationLabel" fx:id="notes" layoutX="121.0" layoutY="348.0" prefHeight="91.0" prefWidth="463.0"
+               stylesheets="@../../style/text.css" wrapText="true"/>
+        <ImageView fitHeight="96.0" fitWidth="96.0" layoutX="14.0" layoutY="345.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/notes_large.png"/>
+        </ImageView>
+    </Pane>
+</Pane>

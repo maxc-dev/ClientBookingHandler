@@ -67,16 +67,13 @@ class PaneScrollerController : Initializable {
             if (scrollPanes[scrollIndex].progressivePane!!.onRequestProgression()) {
                 if (scrollIndex + 1 < scrollPanes.size) {
                     setPaneIndex(++scrollIndex)
-                    progressBar.tick(scrollIndex-1)
+                    progressBar.tick(scrollIndex - 1)
                 }
             } else {
                 scrollPanes[scrollIndex].progressivePane!!.onProgressionDenied()
             }
-
-        } else {
-            if (scrollIndex - 1 >= 0) {
-                setPaneIndex(--scrollIndex)
-            }
+        } else if (scrollIndex - 1 >= 0) {
+            setPaneIndex(--scrollIndex)
         }
     }
 }
