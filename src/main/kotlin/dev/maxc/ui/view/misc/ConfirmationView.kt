@@ -1,6 +1,7 @@
-package dev.maxc.ui.view
+package dev.maxc.ui.view.misc
 
-import dev.maxc.ui.view.creator.DataPoint
+import dev.maxc.ui.view.ProgressivePane
+import dev.maxc.ui.view.DataPoint
 import javafx.fxml.Initializable
 import java.net.URL
 import java.util.*

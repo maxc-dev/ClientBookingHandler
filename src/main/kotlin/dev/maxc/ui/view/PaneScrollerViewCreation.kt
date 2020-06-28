@@ -1,4 +1,4 @@
-package dev.maxc.ui.view.creator
+package dev.maxc.ui.view
 
 import dev.maxc.App
 import dev.maxc.ui.model.scroller.PaneScrollerController

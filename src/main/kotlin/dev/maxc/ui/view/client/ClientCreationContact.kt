@@ -3,7 +3,7 @@ package dev.maxc.ui.view.client
 import dev.maxc.ui.util.InputValidation
 import dev.maxc.ui.util.TextFieldUtils
 import dev.maxc.ui.view.ProgressivePane
-import dev.maxc.ui.view.creator.DataPoint
+import dev.maxc.ui.view.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.TextField
@@ -40,7 +40,10 @@ class ClientCreationContact : Initializable, ProgressivePane {
         return arrayOf(
             DataPoint(ClientConstant.KEY_EMAIL, email.text),
             DataPoint(ClientConstant.KEY_PHONE, phone.text),
-            DataPoint(ClientConstant.KEY_ADDRESS, address.text.plus(" ").plus(postcode.text))
+            DataPoint(
+                ClientConstant.KEY_ADDRESS,
+                address.text.plus(" ").plus(postcode.text)
+            )
         )
     }
 

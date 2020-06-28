@@ -1,7 +1,7 @@
 package dev.maxc.ui.model.scroller
 
 import dev.maxc.ui.model.progressbar.ProgressBar
-import dev.maxc.ui.view.creator.DataPoint
+import dev.maxc.ui.view.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.geometry.Pos

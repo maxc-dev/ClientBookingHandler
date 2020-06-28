@@ -1,6 +1,6 @@
 package dev.maxc.ui.view.client
 
-import dev.maxc.ui.view.creator.PaneScrollerViewCreation
+import dev.maxc.ui.view.PaneScrollerViewCreation
 import javafx.scene.layout.Pane
 
 

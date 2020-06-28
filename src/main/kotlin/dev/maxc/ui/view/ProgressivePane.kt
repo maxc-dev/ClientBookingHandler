@@ -1,7 +1,5 @@
 package dev.maxc.ui.view
 
-import dev.maxc.ui.view.creator.DataPoint
-
 /**
  * @author Max Carter
  * @since 24/06/2020

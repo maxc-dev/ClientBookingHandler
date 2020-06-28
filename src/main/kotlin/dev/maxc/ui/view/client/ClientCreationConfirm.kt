@@ -1,7 +1,7 @@
 package dev.maxc.ui.view.client
 
 import dev.maxc.ui.view.ProgressivePane
-import dev.maxc.ui.view.creator.DataPoint
+import dev.maxc.ui.view.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
