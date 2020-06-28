@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane
  * @author Max Carter
  * @since 23/06/2020
  */
-abstract class PaneScrollerViewCreation(private var parent: Pane, private vararg var scrollables: Scrollable) {
+abstract class PaneScrollerViewCreation(private val parent: Pane, private vararg val scrollables: Scrollable) {
     fun show() {
         val loader = FXMLLoader(App::class.java.getResource("/pane_scroller.fxml"))
         val paneScrollerRoot: Pane = loader.load()

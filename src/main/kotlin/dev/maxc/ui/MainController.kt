@@ -1,7 +1,7 @@
 package dev.maxc.ui
 
-import dev.maxc.ui.view.creator.BookingViewCreation
-import dev.maxc.ui.view.creator.ClientViewCreation
+import dev.maxc.ui.view.booking.BookingViewCreation
+import dev.maxc.ui.view.client.ClientViewCreation
 import dev.maxc.ui.view.creator.PaneScrollerViewCreation
 import javafx.fxml.FXML
 import javafx.fxml.Initializable

@@ -9,6 +9,6 @@
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="234.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../icons/confirm_large.png" />
         </ImageView>
-        <Label id="sideBarUser" alignment="CENTER" layoutX="184.0" layoutY="221.0" prefHeight="17.0" prefWidth="251.0" stylesheets="@../style/text.css" text="Client Added" />
+        <Label id="sideBarUser" alignment="CENTER" layoutX="184.0" layoutY="221.0" prefHeight="17.0" prefWidth="251.0" stylesheets="@../style/text.css" text="Changes Successful" />
     </Pane>
 </Pane>

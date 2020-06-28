@@ -22,7 +22,7 @@ class PaneScrollerController : Initializable {
 
     private lateinit var progressBar: ProgressBar
     private lateinit var scrollPanes: List<Scrollable>
-    var applicationPane = Group()
+    private val applicationPane = Group()
     var scrollIndex = 0
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {

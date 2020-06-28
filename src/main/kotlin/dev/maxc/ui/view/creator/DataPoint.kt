@@ -1,7 +1,5 @@
 package dev.maxc.ui.view.creator
 
-import dev.maxc.ui.view.client.ClientConstant
-
 
 /**
  * @author Max Carter
@@ -9,7 +7,8 @@ import dev.maxc.ui.view.client.ClientConstant
  */
 data class DataPoint(val key: String, val data: String) {
     companion object {
-        val DUMMY_NODE = DataPoint("key", ClientConstant.UNKNOWN)
+        private const val UNKNOWN_RESPONSE = "N/A"
+        private val DUMMY_NODE = DataPoint("key", UNKNOWN_RESPONSE)
 
         fun getData(sample: List<DataPoint>, key: String): String {
             for (dp in sample) {
@@ -17,7 +16,7 @@ data class DataPoint(val key: String, val data: String) {
                     return dp.data
                 }
             }
-            return ClientConstant.UNKNOWN
+            return UNKNOWN_RESPONSE
         }
 
         fun getDataPoint(sample: List<DataPoint>, key: String): DataPoint {
