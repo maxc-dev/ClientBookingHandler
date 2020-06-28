@@ -1,6 +1,8 @@
 package dev.maxc.ui
 
-import dev.maxc.ui.view.client.ClientCreationPaneScroller
+import dev.maxc.ui.view.creator.BookingViewCreation
+import dev.maxc.ui.view.creator.ClientViewCreation
+import dev.maxc.ui.view.creator.PaneScrollerViewCreation
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
@@ -27,10 +29,11 @@ class MainController : Initializable {
     @FXML
     lateinit var contentPane: Pane
 
-    lateinit var viewCreator: ClientCreationPaneScroller
+    private lateinit var clientViewCreator: ClientViewCreation
+    private lateinit var bookingViewCreator: BookingViewCreation
+    private lateinit var currentDisplay: PaneScrollerViewCreation
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        //contentPane.children.add(FXMLLoader.load(App::class.java.getResource("/calendar_node.fxml")))
     }
 
     @FXML
@@ -40,8 +43,22 @@ class MainController : Initializable {
 
     @FXML
     fun onClientCreateRequest() {
-        if (!this::viewCreator.isInitialized) {
-            viewCreator = ClientCreationPaneScroller(contentPane)
+        if (!this::clientViewCreator.isInitialized) {
+            clientViewCreator = ClientViewCreation(contentPane)
         }
+        showView(clientViewCreator)
+    }
+
+    @FXML
+    fun onBookingCreateRequest() {
+        if (!this::bookingViewCreator.isInitialized) {
+            bookingViewCreator = BookingViewCreation(contentPane)
+        }
+        showView(bookingViewCreator)
+    }
+
+    private fun showView(view: PaneScrollerViewCreation) {
+        currentDisplay = view
+        view.show()
     }
 }

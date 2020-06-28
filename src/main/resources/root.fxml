@@ -1,119 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane id="root" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style/pane.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.MainController">
+<AnchorPane id="root" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style/pane.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="dev.maxc.ui.MainController">
     <Pane id="side-bar" prefHeight="700.0" prefWidth="311.0" stylesheets="@style/pane.css">
         <Pane id="sideBarCategoryPane" layoutX="14.0" layoutY="14.0" prefHeight="125.0" prefWidth="282.0">
-            <ImageView fx:id="userPicDisplay" fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@icons/default_pic.png" />
+            <ImageView fx:id="userPicDisplay" fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="9.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <Image url="@icons/default_pic.png"/>
             </ImageView>
-            <Label id="sideBarUser" fx:id="userNameDisplay" layoutX="14.0" layoutY="57.0" prefHeight="35.0" prefWidth="199.0" stylesheets="@style/text.css" text="User Name">
+            <Label id="sideBarUser" fx:id="userNameDisplay" layoutX="14.0" layoutY="57.0" prefHeight="35.0"
+                   prefWidth="199.0" stylesheets="@style/text.css" text="User Name">
             </Label>
-            <Label id="sideBarEmail" fx:id="userEmailDisplay" layoutX="14.0" layoutY="90.0" prefHeight="28.0" prefWidth="224.0" stylesheets="@style/text.css" text="email@example.com" />
-            <Pane id="imagePane" layoutX="238.0" layoutY="87.0" prefHeight="35.0" prefWidth="36.0" stylesheets="@style/image.css" onMouseReleased="#onUserLogout">
-                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/logout.png" />
+            <Label id="sideBarEmail" fx:id="userEmailDisplay" layoutX="14.0" layoutY="90.0" prefHeight="28.0"
+                   prefWidth="224.0" stylesheets="@style/text.css" text="email@example.com"/>
+            <Pane id="imagePane" layoutX="238.0" layoutY="87.0" prefHeight="35.0" prefWidth="36.0"
+                  stylesheets="@style/image.css" onMouseReleased="#onUserLogout">
+                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <Image url="@icons/logout.png"/>
                     <cursor>
-                        <Cursor fx:constant="HAND" />
+                        <Cursor fx:constant="HAND"/>
                     </cursor>
                 </ImageView>
             </Pane>
         </Pane>
         <Pane id="sideBarCategoryPane" layoutX="14.0" layoutY="154.0" prefHeight="56.0" prefWidth="282.0">
-            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0"
+                  stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_right.png" />
+                    <Image url="@icons/arrow_right.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/calendar.png" />
+                    <Image url="@icons/calendar.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Calendar">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Calendar">
                 </Label>
                 <cursor>
-                    <Cursor fx:constant="HAND" />
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
             </HBox>
         </Pane>
         <Pane id="sideBarCategoryPane" layoutX="14.0" layoutY="223.0" prefHeight="163.0" prefWidth="282.0">
-            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0"
+                  stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_down.png" />
+                    <Image url="@icons/arrow_down.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/person.png" />
+                    <Image url="@icons/person.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Clients">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Clients">
                 </Label>
             </HBox>
-            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" onMouseReleased="#onClientCreateRequest" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" onMouseReleased="#onClientCreateRequest"
+                  prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_right.png" />
+                    <Image url="@icons/arrow_right.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/add_person.png" />
+                    <Image url="@icons/add_person.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Add Client">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Add Client">
                 </Label>
                 <cursor>
-                    <Cursor fx:constant="HAND" />
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
             </HBox>
-            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0"
+                  stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_right.png" />
+                    <Image url="@icons/arrow_right.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/edit.png" />
+                    <Image url="@icons/edit.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Edit Client">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Edit Client">
                 </Label>
                 <cursor>
-                    <Cursor fx:constant="HAND" />
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
             </HBox>
         </Pane>
         <Pane id="sideBarCategoryPane" layoutX="14.0" layoutY="400.0" prefHeight="163.0" prefWidth="282.0">
-            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="7.0" layoutY="7.0" prefHeight="42.0" prefWidth="271.0"
+                  stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_down.png" />
+                    <Image url="@icons/arrow_down.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/booking.png" />
+                    <Image url="@icons/booking.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Bookings">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Bookings">
                 </Label>
             </HBox>
-            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="59.0" prefHeight="42.0" prefWidth="234.0"
+                  onMouseReleased="#onBookingCreateRequest" stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_right.png" />
+                    <Image url="@icons/arrow_right.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/booking_add.png" />
+                    <Image url="@icons/booking_add.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Add Booking">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Add Booking">
                 </Label>
                 <cursor>
-                    <Cursor fx:constant="HAND" />
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
             </HBox>
-            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0" stylesheets="@style/pane.css">
+            <HBox id="sideBarButtonContainer" layoutX="44.0" layoutY="111.0" prefHeight="42.0" prefWidth="234.0"
+                  stylesheets="@style/pane.css">
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/arrow_right.png" />
+                    <Image url="@icons/arrow_right.png"/>
                 </ImageView>
                 <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@icons/booking_edit.png" />
+                    <Image url="@icons/booking_edit.png"/>
                 </ImageView>
-                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css" text="Edit Booking">
+                <Label id="sideBarTitle" prefHeight="42.0" prefWidth="179.0" stylesheets="@style/text.css"
+                       text="Edit Booking">
                 </Label>
                 <cursor>
-                    <Cursor fx:constant="HAND" />
+                    <Cursor fx:constant="HAND"/>
                 </cursor>
             </HBox>
         </Pane>
     </Pane>
-    <Pane id="backContentPane" fx:id="contentPane" layoutX="309.0" prefHeight="700.0" prefWidth="900.0" stylesheets="@style/pane.css" />
+    <Pane id="backContentPane" fx:id="contentPane" layoutX="309.0" prefHeight="700.0" prefWidth="900.0"
+          stylesheets="@style/pane.css"/>
 </AnchorPane>
