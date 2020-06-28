@@ -1,9 +1,7 @@
 package dev.maxc.ui.view
 
-import dev.maxc.ui.view.ProgressivePane
-import javafx.fxml.FXML
+import dev.maxc.ui.view.creator.DataPoint
 import javafx.fxml.Initializable
-import javafx.scene.control.Label
 import java.net.URL
 import java.util.*
 
@@ -21,5 +19,12 @@ class ConfirmationView : Initializable, ProgressivePane {
     }
 
     override fun onProgressionDenied() {
+    }
+
+    override fun onViewUpdate(dataPoints: List<DataPoint>) {
+    }
+
+    override fun getDataPoints(): Array<DataPoint> {
+        return arrayOf()
     }
 }

@@ -12,6 +12,6 @@ class ClientViewCreation(parentPane: Pane) : PaneScrollerViewCreation(
     createView("Name", "client/client_create_name"),
     createView("Contact", "client/client_create_contact"),
     createView("Notes", "client/client_create_notes"),
-    createView("Confirm", "client/client_confirm"),
+    createView("Confirm", "client/client_confirm", requiresUpdateNotification = true),
     createView("Confirm", "confirmed", skipProgressBarTab = true)
 )

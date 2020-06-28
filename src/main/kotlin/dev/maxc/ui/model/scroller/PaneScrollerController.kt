@@ -1,6 +1,7 @@
 package dev.maxc.ui.model.scroller
 
 import dev.maxc.ui.model.progressbar.ProgressBar
+import dev.maxc.ui.view.creator.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.geometry.Pos
@@ -25,6 +26,10 @@ class PaneScrollerController : Initializable {
     var scrollIndex = 0
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+    }
+
+    private fun getPaneData(): List<DataPoint> {
+        return scrollPanes.flatMap { pane -> pane.progressivePane!!.getDataPoints().asIterable() }
     }
 
     /**
@@ -56,6 +61,9 @@ class PaneScrollerController : Initializable {
         applicationPane.children.remove(scrollPanes[scrollIndex])
         scrollIndex = index
         applicationPane.children.add(scrollPanes[index])
+        if (scrollPanes[index].requiresUpdateNotification) {
+            scrollPanes[index].progressivePane!!.onViewUpdate(getPaneData())
+        }
     }
 
     /**

@@ -1,6 +1,7 @@
 package dev.maxc.ui.view.client
 
 import dev.maxc.ui.view.ProgressivePane
+import dev.maxc.ui.view.creator.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.TextArea
@@ -14,7 +15,7 @@ import java.util.*
  */
 class ClientCreationNotes : Initializable, ProgressivePane {
     @FXML
-    lateinit var notes: TextArea
+    var notes: TextArea = TextArea() //some reason lateinit throws an error with text areas
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
     }
@@ -24,5 +25,12 @@ class ClientCreationNotes : Initializable, ProgressivePane {
     }
 
     override fun onProgressionDenied() {
+    }
+
+    override fun getDataPoints(): Array<DataPoint> {
+        return arrayOf(DataPoint(ClientConstant.KEY_NOTES, notes.text))
+    }
+
+    override fun onViewUpdate(dataPoints: List<DataPoint>) {
     }
 }

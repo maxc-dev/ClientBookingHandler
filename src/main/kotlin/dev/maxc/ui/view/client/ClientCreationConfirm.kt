@@ -1,6 +1,7 @@
 package dev.maxc.ui.view.client
 
 import dev.maxc.ui.view.ProgressivePane
+import dev.maxc.ui.view.creator.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
@@ -42,5 +43,19 @@ class ClientCreationConfirm : Initializable, ProgressivePane {
     }
 
     override fun onProgressionDenied() {
+    }
+
+    override fun onViewUpdate(dataPoints: List<DataPoint>) {
+        name.text = DataPoint.getData(dataPoints, ClientConstant.KEY_NAME)
+        companyName.text = DataPoint.getData(dataPoints, ClientConstant.KEY_COMPANY)
+        activityName.text = DataPoint.getData(dataPoints, ClientConstant.KEY_ACTIVITY)
+        email.text = DataPoint.getData(dataPoints, ClientConstant.KEY_EMAIL)
+        phone.text = DataPoint.getData(dataPoints, ClientConstant.KEY_PHONE)
+        address.text = DataPoint.getData(dataPoints, ClientConstant.KEY_ADDRESS)
+        notes.text = DataPoint.getData(dataPoints, ClientConstant.KEY_NOTES)
+    }
+
+    override fun getDataPoints(): Array<DataPoint> {
+        return arrayOf()
     }
 }

@@ -3,6 +3,7 @@ package dev.maxc.ui.view.client
 import dev.maxc.ui.util.InputValidation
 import dev.maxc.ui.util.TextFieldUtils
 import dev.maxc.ui.view.ProgressivePane
+import dev.maxc.ui.view.creator.DataPoint
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.TextField
@@ -35,6 +36,14 @@ class ClientCreationName : Initializable, ProgressivePane {
         return InputValidation.isNotEmpty(forename, surname, companyName, activityName)
     }
 
+    override fun getDataPoints(): Array<DataPoint> {
+        return arrayOf(
+            DataPoint(ClientConstant.KEY_NAME, forename.text.plus(" ").plus(surname.text)),
+            DataPoint(ClientConstant.KEY_COMPANY, companyName.text),
+            DataPoint(ClientConstant.KEY_ACTIVITY, activityName.text)
+        )
+    }
+
     override fun onProgressionDenied() {
         for (field in arrayOf(forename, surname, companyName, activityName)) {
             if (field.text.isBlank()) {
@@ -43,5 +52,8 @@ class ClientCreationName : Initializable, ProgressivePane {
                 TextFieldUtils.unFlag(field)
             }
         }
+    }
+
+    override fun onViewUpdate(dataPoints: List<DataPoint>) {
     }
 }

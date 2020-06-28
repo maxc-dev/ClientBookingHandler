@@ -22,8 +22,13 @@ abstract class PaneScrollerViewCreation(private var parent: Pane, private vararg
     }
 
     companion object {
-        fun createView(title: String, view: String, skipProgressBarTab: Boolean = false): Scrollable {
-            val scrollable = Scrollable(title, skipProgressBarTab)
+        fun createView(
+            title: String,
+            view: String,
+            skipProgressBarTab: Boolean = false,
+            requiresUpdateNotification: Boolean = false
+        ): Scrollable {
+            val scrollable = Scrollable(title, skipProgressBarTab, requiresUpdateNotification)
             val loader = FXMLLoader(App::class.java.getResource("/view/$view.fxml"))
             scrollable.children.add(loader.load())
             scrollable.progressivePane = loader.getController()

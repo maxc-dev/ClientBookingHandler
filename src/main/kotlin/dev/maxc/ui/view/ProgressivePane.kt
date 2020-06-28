@@ -1,5 +1,6 @@
 package dev.maxc.ui.view
 
+import dev.maxc.ui.view.creator.DataPoint
 
 /**
  * @author Max Carter
@@ -8,4 +9,6 @@ package dev.maxc.ui.view
 interface ProgressivePane {
     fun onRequestProgression() : Boolean
     fun onProgressionDenied()
+    fun onViewUpdate(dataPoints: List<DataPoint>)
+    fun getDataPoints() : Array<DataPoint>
 }
