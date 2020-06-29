@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<Pane id="scrollPane" prefHeight="540.0" prefWidth="720.0" stylesheets="@../../style/pane.css"
-      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="dev.maxc.ui.view.booking.BookingLocateClient">
-    <Pane id="sideBarCategoryPane" layoutX="51.0" layoutY="51.0" prefHeight="425.0" prefWidth="618.0"
-          stylesheets="@../../style/pane.css">
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="23.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../../icons/person_search_large.png"/>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane id="scrollPane" prefHeight="540.0" prefWidth="720.0" stylesheets="@../../style/pane.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.maxc.ui.view.booking.BookingLocateClient">
+    <Pane id="sideBarCategoryPane" layoutX="51.0" layoutY="51.0" prefHeight="425.0" prefWidth="618.0" stylesheets="@../../style/pane.css">
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../icons/person_search_large.png" />
         </ImageView>
-        <Label id="sideBarUser" alignment="CENTER" layoutX="14.0" layoutY="173.0" prefHeight="17.0" prefWidth="251.0"
-               stylesheets="@../../style/text.css" text="Client Information"/>
-        <TextField fx:id="forename" alignment="CENTER" layoutX="26.0" layoutY="214.0" prefHeight="25.0"
-                   prefWidth="228.0" promptText="Forename" stylesheets="@../../style/text.css"/>
-        <TextField fx:id="surname" alignment="CENTER" layoutX="26.0" layoutY="264.0" prefHeight="25.0" prefWidth="228.0"
-                   promptText="Surname" stylesheets="@../../style/text.css"/>
-        <TextField fx:id="companyName" alignment="CENTER" layoutX="26.0" layoutY="315.0" prefHeight="25.0"
-                   prefWidth="228.0" promptText="Company Name" stylesheets="@../../style/text.css"/>
-        <TextField fx:id="activityName" alignment="CENTER" layoutX="26.0" layoutY="364.0" prefHeight="25.0"
-                   prefWidth="228.0" promptText="Activity" stylesheets="@../../style/text.css"/>
-        <ImageView fx:id="clientStatusImage" fitHeight="150.0" fitWidth="200.0" layoutX="367.0" layoutY="116.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../../icons/person_unknown_large.png"/>
+        <Label id="sideBarUser" alignment="CENTER" layoutX="14.0" layoutY="173.0" prefHeight="17.0" prefWidth="251.0" stylesheets="@../../style/text.css" text="Client Information" />
+        <TextField fx:id="forename" alignment="CENTER" layoutX="26.0" layoutY="214.0" prefHeight="25.0" prefWidth="228.0" promptText="Forename" stylesheets="@../../style/text.css" />
+        <TextField fx:id="surname" alignment="CENTER" layoutX="26.0" layoutY="264.0" prefHeight="25.0" prefWidth="228.0" promptText="Surname" stylesheets="@../../style/text.css" />
+        <TextField fx:id="companyName" alignment="CENTER" layoutX="26.0" layoutY="315.0" prefHeight="25.0" prefWidth="228.0" promptText="Company Name" stylesheets="@../../style/text.css" />
+        <TextField fx:id="activityName" alignment="CENTER" layoutX="26.0" layoutY="364.0" prefHeight="25.0" prefWidth="228.0" promptText="Activity" stylesheets="@../../style/text.css" />
+        <ImageView fx:id="clientStatusImage" fitHeight="150.0" fitWidth="200.0" layoutX="385.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../icons/person_unknown_large.png" />
         </ImageView>
-        <Label fx:id="clientStatusText" id="sideBarUser" alignment="CENTER" layoutX="317.0" layoutY="266.0" prefHeight="17.0" prefWidth="251.0"
-               stylesheets="@../../style/text.css" text="Client Not Found"/>
+        <Label id="sideBarUser" fx:id="clientStatusText" alignment="CENTER" layoutX="335.0" layoutY="173.0" prefHeight="17.0" prefWidth="251.0" stylesheets="@../../style/text.css" text="Client Not Found" />
+      <Label id="confirmationLabel" fx:id="clientName" layoutX="371.0" layoutY="220.0" prefHeight="27.0" prefWidth="228.0" stylesheets="@../../style/text.css" text="???" />
+      <Label id="confirmationLabel" fx:id="clientCompany" layoutX="371.0" layoutY="270.0" prefHeight="27.0" prefWidth="228.0" stylesheets="@../../style/text.css" text="???" />
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="317.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../icons/person.png" />
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="317.0" layoutY="266.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/company.png"/>
+        </ImageView>
     </Pane>
 </Pane>
