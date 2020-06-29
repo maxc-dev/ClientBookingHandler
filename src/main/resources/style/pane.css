@@ -17,7 +17,6 @@
 }
 
 #contentPane {
-    -fx-background-color: #fdfdfd;
     -fx-background-color: #ffffff;
 }
 
@@ -34,6 +33,18 @@
 }
 
 #sideBarButtonContainer:hover {
+    -fx-background-color: #5bc915;
+}
+
+#elevatedPane {
+    -fx-background-color: #61d219;
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #343434, 7, 0, 0, 0);
+}
+
+#elevatedPane:hover {
     -fx-background-color: #5bc915;
 }
 

@@ -43,6 +43,14 @@
     -fx-background-insets: 0 -2 -2 -2, 0 0 0 0, 0 -2 6 -2;
 }
 
+#promptLabel {
+    -fx-font-family: "Roboto Condensed";
+    -fx-text-fill: #fcfcfc;
+    -fx-font-size: 18px;
+    -fx-font-style: italic;
+    -fx-text-alignment: center;
+}
+
 .text-field {
     -fx-font-family: "Roboto";
     -fx-text-fill: #ffffff;
