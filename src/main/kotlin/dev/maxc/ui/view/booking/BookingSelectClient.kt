@@ -1,8 +1,8 @@
 package dev.maxc.ui.view.booking
 
 import dev.maxc.ui.util.TextFieldUtils
-import dev.maxc.ui.view.ProgressivePane
 import dev.maxc.ui.view.DataPoint
+import dev.maxc.ui.view.ProgressivePane
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Label
@@ -16,7 +16,7 @@ import java.util.*
  * @author Max Carter
  * @since 06/06/2020
  */
-class BookingLocateClient : Initializable, ProgressivePane {
+class BookingSelectClient : Initializable, ProgressivePane {
     @FXML
     lateinit var forename: TextField
 
@@ -44,6 +44,7 @@ class BookingLocateClient : Initializable, ProgressivePane {
     var clientStatus = true //true until actual validation of the user can be confirmed
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
+        checkClient(forename, surname, companyName, activityName)
     }
 
     override fun onRequestProgression(): Boolean {
@@ -63,5 +64,14 @@ class BookingLocateClient : Initializable, ProgressivePane {
     }
 
     override fun onViewUpdate(dataPoints: List<DataPoint>) {
+    }
+
+    private fun checkClient(vararg fields: TextField) {
+        for (field in fields) {
+            field.textProperty()
+                .addListener { _, _, newValue ->
+                    //todo check database for client data for nweValue
+                }
+        }
     }
 }
