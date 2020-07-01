@@ -19,6 +19,10 @@ class BookingViewCreation(parentPane: Pane) : PaneScrollerViewCreation(
         "booking/booking_create_location"
     ),
     createView(
+        "Dates",
+        "booking/booking_add_dates"
+    ),
+    createView(
         "Confirm",
         "confirmed",
         skipProgressBarTab = true
