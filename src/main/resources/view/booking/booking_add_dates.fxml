@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <Pane id="scrollPane" prefHeight="540.0" prefWidth="720.0" stylesheets="@../../style/pane.css"
       xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="dev.maxc.ui.view.booking.BookingSelectDates">
     <Pane id="sideBarCategoryPane" layoutX="35.0" layoutY="58.0" prefHeight="425.0" prefWidth="324.0"
           stylesheets="@../../style/pane.css">
-        <ComboBox fx:id="month" layoutX="19.0" layoutY="14.0" prefHeight="39.0" prefWidth="287.0"
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/calendar.png"/>
+        </ImageView>
+        <Label id="sideBarUser" layoutX="74.0" layoutY="15.0" prefHeight="35.0" prefWidth="238.0"
+               stylesheets="@../../style/text.css" text="Date of Booking"/>
+        <ComboBox fx:id="month" layoutX="72.0" layoutY="63.0" prefHeight="39.0" prefWidth="238.0"
                   stylesheets="@../../style/combo.css"/>
-        <ComboBox fx:id="date" layoutX="19.0" layoutY="63.0" prefHeight="39.0" prefWidth="137.0"
+        <ComboBox fx:id="date" layoutX="72.0" layoutY="112.0" prefHeight="39.0" prefWidth="111.0"
                   stylesheets="@../../style/combo.css"/>
-        <TextField fx:id="year" layoutX="169.0" layoutY="63.0" prefHeight="39.0" prefWidth="137.0" promptText="Year"
+        <TextField fx:id="year" layoutX="199.0" layoutY="112.0" prefHeight="39.0" prefWidth="111.0" promptText="Year"
                    stylesheets="@../../style/text.css"/>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="14.0" layoutY="167.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@../../icons/time.png"/>
+        </ImageView>
+        <Label id="sideBarUser" layoutX="74.0" layoutY="167.0" prefHeight="35.0" prefWidth="238.0"
+               stylesheets="@../../style/text.css" text="Time of Booking"/>
+        <ComboBox fx:id="startHour" layoutX="152.0" layoutY="213.0" prefHeight="39.0" prefWidth="67.0"
+                  stylesheets="@../../style/combo.css"/>
+        <Label id="sideBarUser" layoutX="227.0" layoutY="215.0" prefHeight="35.0" prefWidth="9.0"
+               stylesheets="@../../style/text.css" text=":"/>
+        <ComboBox fx:id="startMinute" layoutX="241.0" layoutY="213.0" prefHeight="39.0" prefWidth="67.0"
+                  stylesheets="@../../style/combo.css"/>
+        <ComboBox fx:id="endHour" layoutX="152.0" layoutY="266.0" prefHeight="39.0" prefWidth="67.0"
+                  stylesheets="@../../style/combo.css"/>
+        <Label id="sideBarUser" layoutX="227.0" layoutY="268.0" prefHeight="35.0" prefWidth="9.0"
+               stylesheets="@../../style/text.css" text=":"/>
+        <ComboBox fx:id="endMinute" layoutX="241.0" layoutY="266.0" prefHeight="39.0" prefWidth="67.0"
+                  stylesheets="@../../style/combo.css"/>
+        <Label id="promptLabel" layoutX="88.0" layoutY="215.0" prefHeight="35.0" prefWidth="51.0"
+               stylesheets="@../../style/text.css" text="START"/>
+        <Label id="promptLabel" layoutX="88.0" layoutY="268.0" prefHeight="35.0" prefWidth="60.0"
+               stylesheets="@../../style/text.css" text="FINISH"/>
+        <Pane id="elevatedPane" layoutX="75.0" layoutY="340.0" onMouseClicked="#onDateAdd" prefHeight="55.0"
+              prefWidth="174.0">
+            <HBox layoutX="10.0" layoutY="7.0" prefHeight="42.0" prefWidth="158.0" stylesheets="@../../style/pane.css">
+                <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/unchecked.png"/>
+                </ImageView>
+                <Label id="sideBarTitle" prefHeight="35.0" prefWidth="119.0" stylesheets="@../../style/text.css"
+                       text="Add Date">
+                </Label>
+            </HBox>
+        </Pane>
     </Pane>
 </Pane>
